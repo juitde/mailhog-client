@@ -1,0 +1,25 @@
+<?php
+
+$finder = PhpCsFixer\Finder::create()
+    ->in(__DIR__ . '/src')
+    ->in(__DIR__ . '/tests')
+;
+
+return PhpCsFixer\Config::create()
+    ->setRules([
+        '@PSR1' => true,
+        '@PSR2' => true,
+        '@Symfony' => true,
+        'array_syntax' => ['syntax' => 'short'],
+        'concat_space' => ['spacing' => 'one'],
+        'declare_strict_types' => true,
+        'JUIT/collapse_single_type_hint' => true,
+        'binary_operator_spaces' => [
+            'align_double_arrow' => true,
+            'align_equals' => true
+        ],
+    ])
+    ->setRiskyAllowed(true)
+    ->registerCustomFixers([new \JUIT\PhpCsFixer\CollapseSingleTypeHintFixer()])
+    ->setFinder($finder)
+;

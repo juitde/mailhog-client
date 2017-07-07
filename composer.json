@@ -1,0 +1,25 @@
+{
+    "name": "juit/mailhog-client",
+    "type": "library",
+    "description": "MailHog client",
+    "authors": [
+        {
+            "name": "Jan Unger",
+            "email": "jan.unger@juit.de"
+        }
+    ],
+    "require": {
+        "php": ">= 7.0.0",
+        "guzzlehttp/guzzle": "^6.3",
+        "roave/security-advisories": "dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.2"
+    },
+    "autoload": {
+        "psr-4": { "JUIT\\MailHog\\": "src/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "JUIT\\Tests\\MailHog\\": "tests/" }
+    }
+}
