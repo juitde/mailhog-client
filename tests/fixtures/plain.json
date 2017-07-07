@@ -1,0 +1,64 @@
+{
+    "ID": "0LFMq1x6mMu7r9XhFFbrkl3oOmyc-2z5oqH73as6-aE=@mailhog.example",
+    "From": {
+        "Relays": null,
+        "Mailbox": "sender",
+        "Domain": "example.com",
+        "Params": ""
+    },
+    "To": [
+        {
+            "Relays": null,
+            "Mailbox": "recipient",
+            "Domain": "example.com",
+            "Params": ""
+        }
+    ],
+    "Content": {
+        "Headers": {
+            "Content-Transfer-Encoding": [
+                "quoted-printable"
+            ],
+            "Content-Type": [
+                "text\/plain; charset=utf-8"
+            ],
+            "Date": [
+                "Sat, 08 Jul 2017 12:08:54 +0200"
+            ],
+            "From": [
+                "Sender <sender@example.com>"
+            ],
+            "MIME-Version": [
+                "1.0"
+            ],
+            "Message-ID": [
+                "<044e949d2a12cd41a9d1fc96f344bdb5@swift.generated>"
+            ],
+            "Received": [
+                "from [127.0.0.1] by mailhog.example (MailHog)\r\n          id 0LFMq1x6mMu7r9XhFFbrkl3oOmyc-2z5oqH73as6-aE=@mailhog.example; Sat, 08 Jul 2017 12:08:54 +0200"
+            ],
+            "Return-Path": [
+                "<sender@example.com>"
+            ],
+            "Subject": [
+                "Some plain mail"
+            ],
+            "To": [
+                "Recipient <recipient@example.com>"
+            ]
+        },
+        "Body": "Some plain body",
+        "Size": 325,
+        "MIME": null
+    },
+    "Created": "2017-07-08T12:08:54.458071723+02:00",
+    "MIME": null,
+    "Raw": {
+        "From": "sender@example.com",
+        "To": [
+            "recipient@example.com"
+        ],
+        "Data": "Message-ID: <044e949d2a12cd41a9d1fc96f344bdb5@swift.generated>\r\nDate: Sat, 08 Jul 2017 12:08:54 +0200\r\nSubject: Some plain mail\r\nFrom: Sender <sender@example.com>\r\nTo: Recipient <recipient@example.com>\r\nMIME-Version: 1.0\r\nContent-Type: text\/plain; charset=utf-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\nSome plain body",
+        "Helo": "[127.0.0.1]"
+    }
+}

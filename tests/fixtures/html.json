@@ -1,0 +1,64 @@
+{
+    "ID": "iQ-qnZU04CCQPn-L5Wgq-85rKLRF3lr3qogFMusUg94=@mailhog.example",
+    "From": {
+        "Relays": null,
+        "Mailbox": "sender",
+        "Domain": "example.com",
+        "Params": ""
+    },
+    "To": [
+        {
+            "Relays": null,
+            "Mailbox": "recipient",
+            "Domain": "example.com",
+            "Params": ""
+        }
+    ],
+    "Content": {
+        "Headers": {
+            "Content-Transfer-Encoding": [
+                "quoted-printable"
+            ],
+            "Content-Type": [
+                "text\/html; charset=utf-8"
+            ],
+            "Date": [
+                "Sat, 08 Jul 2017 12:08:54 +0200"
+            ],
+            "From": [
+                "Sender <sender@example.com>"
+            ],
+            "MIME-Version": [
+                "1.0"
+            ],
+            "Message-ID": [
+                "<4d48de0f08411be20e3db805004197e5@swift.generated>"
+            ],
+            "Received": [
+                "from  by mailhog.example (MailHog)\r\n          id iQ-qnZU04CCQPn-L5Wgq-85rKLRF3lr3qogFMusUg94=@mailhog.example; Sat, 08 Jul 2017 12:08:54 +0200"
+            ],
+            "Return-Path": [
+                "<sender@example.com>"
+            ],
+            "Subject": [
+                "Some HTML mail"
+            ],
+            "To": [
+                "Recipient <recipient@example.com>"
+            ]
+        },
+        "Body": "<p>Some HTML body<\/p>",
+        "Size": 329,
+        "MIME": null
+    },
+    "Created": "2017-07-08T12:08:54.461388997+02:00",
+    "MIME": null,
+    "Raw": {
+        "From": "sender@example.com",
+        "To": [
+            "recipient@example.com"
+        ],
+        "Data": "Message-ID: <4d48de0f08411be20e3db805004197e5@swift.generated>\r\nDate: Sat, 08 Jul 2017 12:08:54 +0200\r\nSubject: Some HTML mail\r\nFrom: Sender <sender@example.com>\r\nTo: Recipient <recipient@example.com>\r\nMIME-Version: 1.0\r\nContent-Type: text\/html; charset=utf-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\n<p>Some HTML body<\/p>",
+        "Helo": ""
+    }
+}
