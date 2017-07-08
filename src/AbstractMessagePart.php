@@ -17,9 +17,9 @@ abstract class AbstractMessagePart
     /** @var string */
     protected $body;
 
-    public function __construct(array $headers, string $body, array $parts = [])
+    public function __construct(HeaderBag $headers, string $body, array $parts = [])
     {
-        $this->headers = new HeaderBag($headers);
+        $this->headers = $headers;
         $this->body    = $body;
         $this->parts   = array_map(
             function ($data) {

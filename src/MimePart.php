@@ -4,12 +4,14 @@ declare(strict_types=1);
 
 namespace JUIT\MailHog;
 
+use Symfony\Component\HttpFoundation\HeaderBag;
+
 class MimePart extends AbstractMessagePart
 {
     public static function create(array $rawData): MimePart
     {
         return new static(
-            $rawData['Headers'],
+            new HeaderBag($rawData['Headers']),
             $rawData['Body'],
             $rawData['MIME']['Parts'] ?? []
         );
