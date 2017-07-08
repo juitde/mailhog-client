@@ -1,0 +1,159 @@
+{
+    "ID": "umPx9TPf5GsEtZPxZWl7_od5bYsofubQHKOlCR7kVF0=@mailhog.example",
+    "From": {
+        "Relays": null,
+        "Mailbox": "sender",
+        "Domain": "example.com",
+        "Params": ""
+    },
+    "To": [
+        {
+            "Relays": null,
+            "Mailbox": "recipient",
+            "Domain": "example.com",
+            "Params": ""
+        }
+    ],
+    "Content": {
+        "Headers": {
+            "Content-Type": [
+                "multipart\/mixed; boundary=\"_=_swift_v4_1499513469_135fb6b9ba1aedc871e04d3b8e5b38c4_=_\""
+            ],
+            "Date": [
+                "Sat, 08 Jul 2017 13:31:09 +0200"
+            ],
+            "From": [
+                "Sender <sender@example.com>"
+            ],
+            "MIME-Version": [
+                "1.0"
+            ],
+            "Message-ID": [
+                "<7346caa74540c9e094494b28cd36a117@swift.generated>"
+            ],
+            "Received": [
+                "from  by mailhog.example (MailHog)\r\n          id umPx9TPf5GsEtZPxZWl7_od5bYsofubQHKOlCR7kVF0=@mailhog.example; Sat, 08 Jul 2017 13:31:09 +0200"
+            ],
+            "Return-Path": [
+                "<sender@example.com>"
+            ],
+            "Subject": [
+                "Some multipart mail with attachments"
+            ],
+            "To": [
+                "Recipient <recipient@example.com>"
+            ]
+        },
+        "Body": "\r\n--_=_swift_v4_1499513469_135fb6b9ba1aedc871e04d3b8e5b38c4_=_\r\nContent-Type: multipart\/alternative;\r\n boundary=\"_=_swift_v4_1499513469_5f26d6ecf30d607307d71ca8aa025a42_=_\"\r\n\r\n\r\n--_=_swift_v4_1499513469_5f26d6ecf30d607307d71ca8aa025a42_=_\r\nContent-Type: text\/plain; charset=utf-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\nSome plain part\r\n\r\n--_=_swift_v4_1499513469_5f26d6ecf30d607307d71ca8aa025a42_=_\r\nContent-Type: text\/html; charset=utf-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\n<p>Some HTML part<\/p>\r\n\r\n--_=_swift_v4_1499513469_5f26d6ecf30d607307d71ca8aa025a42_=_--\r\n\r\n\r\n--_=_swift_v4_1499513469_135fb6b9ba1aedc871e04d3b8e5b38c4_=_\r\nContent-Type: application\/octet-stream; name=some_file.txt\r\nContent-Transfer-Encoding: base64\r\nContent-Disposition: attachment; filename=some_file.txt\r\n\r\nU29tZSBhdHRhY2htZW50IGRhdGE=\r\n\r\n--_=_swift_v4_1499513469_135fb6b9ba1aedc871e04d3b8e5b38c4_=_\r\nContent-Type: application\/octet-stream; name=some_other_file.txt\r\nContent-Transfer-Encoding: base64\r\nContent-Disposition: attachment; filename=some_other_file.txt\r\n\r\nU29tZSBvdGhlciBhdHRhY2htZW50IGRhdGE=\r\n\r\n--_=_swift_v4_1499513469_135fb6b9ba1aedc871e04d3b8e5b38c4_=_--\r\n",
+        "Size": 1518,
+        "MIME": null
+    },
+    "Created": "2017-07-08T13:31:09.497993054+02:00",
+    "MIME": {
+        "Parts": [
+            {
+                "Headers": {},
+                "Body": "",
+                "Size": 0,
+                "MIME": null
+            },
+            {
+                "Headers": {
+                    "Content-Type": [
+                        "multipart\/alternative; boundary=\"_=_swift_v4_1499513469_5f26d6ecf30d607307d71ca8aa025a42_=_\""
+                    ]
+                },
+                "Body": "\r\n--_=_swift_v4_1499513469_5f26d6ecf30d607307d71ca8aa025a42_=_\r\nContent-Type: text\/plain; charset=utf-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\nSome plain part\r\n\r\n--_=_swift_v4_1499513469_5f26d6ecf30d607307d71ca8aa025a42_=_\r\nContent-Type: text\/html; charset=utf-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\n<p>Some HTML part<\/p>\r\n\r\n--_=_swift_v4_1499513469_5f26d6ecf30d607307d71ca8aa025a42_=_--",
+                "Size": 519,
+                "MIME": {
+                    "Parts": [
+                        {
+                            "Headers": {},
+                            "Body": "",
+                            "Size": 0,
+                            "MIME": null
+                        },
+                        {
+                            "Headers": {
+                                "Content-Transfer-Encoding": [
+                                    "quoted-printable"
+                                ],
+                                "Content-Type": [
+                                    "text\/plain; charset=utf-8"
+                                ]
+                            },
+                            "Body": "Some plain part",
+                            "Size": 103,
+                            "MIME": null
+                        },
+                        {
+                            "Headers": {
+                                "Content-Transfer-Encoding": [
+                                    "quoted-printable"
+                                ],
+                                "Content-Type": [
+                                    "text\/html; charset=utf-8"
+                                ]
+                            },
+                            "Body": "<p>Some HTML part<\/p>",
+                            "Size": 108,
+                            "MIME": null
+                        },
+                        {
+                            "Headers": {},
+                            "Body": "--",
+                            "Size": 2,
+                            "MIME": null
+                        }
+                    ]
+                }
+            },
+            {
+                "Headers": {
+                    "Content-Disposition": [
+                        "attachment; filename=some_file.txt"
+                    ],
+                    "Content-Transfer-Encoding": [
+                        "base64"
+                    ],
+                    "Content-Type": [
+                        "application\/octet-stream; name=some_file.txt"
+                    ]
+                },
+                "Body": "U29tZSBhdHRhY2htZW50IGRhdGE=",
+                "Size": 182,
+                "MIME": null
+            },
+            {
+                "Headers": {
+                    "Content-Disposition": [
+                        "attachment; filename=some_other_file.txt"
+                    ],
+                    "Content-Transfer-Encoding": [
+                        "base64"
+                    ],
+                    "Content-Type": [
+                        "application\/octet-stream; name=some_other_file.txt"
+                    ]
+                },
+                "Body": "U29tZSBvdGhlciBhdHRhY2htZW50IGRhdGE=",
+                "Size": 202,
+                "MIME": null
+            },
+            {
+                "Headers": {},
+                "Body": "--",
+                "Size": 2,
+                "MIME": null
+            }
+        ]
+    },
+    "Raw": {
+        "From": "sender@example.com",
+        "To": [
+            "recipient@example.com"
+        ],
+        "Data": "Message-ID: <7346caa74540c9e094494b28cd36a117@swift.generated>\r\nDate: Sat, 08 Jul 2017 13:31:09 +0200\r\nSubject: Some multipart mail with attachments\r\nFrom: Sender <sender@example.com>\r\nTo: Recipient <recipient@example.com>\r\nMIME-Version: 1.0\r\nContent-Type: multipart\/mixed;\r\n boundary=\"_=_swift_v4_1499513469_135fb6b9ba1aedc871e04d3b8e5b38c4_=_\"\r\n\r\n\r\n--_=_swift_v4_1499513469_135fb6b9ba1aedc871e04d3b8e5b38c4_=_\r\nContent-Type: multipart\/alternative;\r\n boundary=\"_=_swift_v4_1499513469_5f26d6ecf30d607307d71ca8aa025a42_=_\"\r\n\r\n\r\n--_=_swift_v4_1499513469_5f26d6ecf30d607307d71ca8aa025a42_=_\r\nContent-Type: text\/plain; charset=utf-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\nSome plain part\r\n\r\n--_=_swift_v4_1499513469_5f26d6ecf30d607307d71ca8aa025a42_=_\r\nContent-Type: text\/html; charset=utf-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\n<p>Some HTML part<\/p>\r\n\r\n--_=_swift_v4_1499513469_5f26d6ecf30d607307d71ca8aa025a42_=_--\r\n\r\n\r\n--_=_swift_v4_1499513469_135fb6b9ba1aedc871e04d3b8e5b38c4_=_\r\nContent-Type: application\/octet-stream; name=some_file.txt\r\nContent-Transfer-Encoding: base64\r\nContent-Disposition: attachment; filename=some_file.txt\r\n\r\nU29tZSBhdHRhY2htZW50IGRhdGE=\r\n\r\n--_=_swift_v4_1499513469_135fb6b9ba1aedc871e04d3b8e5b38c4_=_\r\nContent-Type: application\/octet-stream; name=some_other_file.txt\r\nContent-Transfer-Encoding: base64\r\nContent-Disposition: attachment; filename=some_other_file.txt\r\n\r\nU29tZSBvdGhlciBhdHRhY2htZW50IGRhdGE=\r\n\r\n--_=_swift_v4_1499513469_135fb6b9ba1aedc871e04d3b8e5b38c4_=_--\r\n",
+        "Helo": ""
+    }
+}

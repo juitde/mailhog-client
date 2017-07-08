@@ -79,4 +79,24 @@ class MessageTest extends MailHogTestCase
 
         $this->assertSame('<p>Some HTML part</p>', $SUT->getHtmlPart()->getBody());
     }
+
+    /** @test */
+    public function it_returns_the_plain_part_of_a_multipart_message_with_attachment()
+    {
+        $rawData = $this->loadFixture('multipart_with_attachments');
+
+        $SUT = Message::create($rawData);
+
+        $this->assertSame('Some plain part', $SUT->getPlainPart()->getBody());
+    }
+
+    /** @test */
+    public function it_returns_the_html_part_of_a_multipart_message_with_attachment()
+    {
+        $rawData = $this->loadFixture('multipart_with_attachments');
+
+        $SUT = Message::create($rawData);
+
+        $this->assertSame('<p>Some HTML part</p>', $SUT->getHtmlPart()->getBody());
+    }
 }
