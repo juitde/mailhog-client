@@ -170,7 +170,7 @@ class MessageTest extends MailHogTestCase
     {
         $rawData = $this->loadJsonFixture('multipart_with_attachments');
 
-        $SUT = Message::create($rawData);
+        $SUT         = Message::create($rawData);
         $attachments = $SUT->getAttachments();
 
         $this->assertCount(2, $attachments);

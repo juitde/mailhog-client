@@ -50,7 +50,7 @@ class MimePartTest extends MailHogTestCase
             [
                 'Headers' => [
                     'Content-Type' => [
-                        "multipart/alternative; boundary=\"_=_swift_v4_1499513469_5f26d6ecf30d607307d71ca8aa025a42_=_\"",
+                        'multipart/alternative; boundary="_=_swift_v4_1499513469_5f26d6ecf30d607307d71ca8aa025a42_=_"',
                     ],
                 ],
                 'Body'    => "\r\n--_=_swift_v4_1499513469_5f26d6ecf30d607307d71ca8aa025a42_=_\r\nContent-Type: text\/plain; charset=utf-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\nSome plain part\r\n\r\n--_=_swift_v4_1499513469_5f26d6ecf30d607307d71ca8aa025a42_=_\r\nContent-Type: text\/html; charset=utf-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\n<p>Some HTML part<\/p>\r\n\r\n--_=_swift_v4_1499513469_5f26d6ecf30d607307d71ca8aa025a42_=_--",
@@ -58,7 +58,7 @@ class MimePartTest extends MailHogTestCase
         );
 
         $this->assertSame(
-            "multipart/alternative; boundary=\"_=_swift_v4_1499513469_5f26d6ecf30d607307d71ca8aa025a42_=_\"",
+            'multipart/alternative; boundary="_=_swift_v4_1499513469_5f26d6ecf30d607307d71ca8aa025a42_=_"',
             $SUT->getContentType()
         );
         $this->assertSame(
@@ -86,7 +86,7 @@ class MimePartTest extends MailHogTestCase
         $otherContentTypes = [
             'text/plain; charset=utf-8',
             'text/html; charset=utf-8',
-            'multipart/alternative; boundary="_=_swift_v4_1499508534_1bec7e3c5e83685cbaf6ebfaa4f8dc98_=_"'
+            'multipart/alternative; boundary="_=_swift_v4_1499508534_1bec7e3c5e83685cbaf6ebfaa4f8dc98_=_"',
         ];
         foreach ($otherContentTypes as $otherContentType) {
             $SUT = MimePart::create(
