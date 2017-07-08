@@ -37,7 +37,7 @@ abstract class AbstractMessagePart
 
     public function getBody(): string
     {
-        if ($this->startsWith($this->headers->get('Content-Type'), 'multipart')) {
+        if ($this->contentTypeStartsWith('multipart')) {
             return $this->body;
         }
 
@@ -50,7 +50,7 @@ abstract class AbstractMessagePart
     protected function getMimePart(string $contentType)
     {
         foreach ($this->parts as $part) {
-            if ($this->startsWith($part->getContentType(), $contentType)) {
+            if ($part->contentTypeStartsWith($contentType)) {
                 return $part;
             }
             if ($subPart = $part->getMimePart($contentType)) {
@@ -61,8 +61,8 @@ abstract class AbstractMessagePart
         return null;
     }
 
-    private function startsWith(string $haystack = null, string $needle): bool
+    protected function contentTypeStartsWith(string $needle): bool
     {
-        return 0 === strpos((string) $haystack, $needle);
+        return 0 === strpos((string) $this->getContentType(), $needle);
     }
 }
