@@ -43,4 +43,28 @@ class MimePartTest extends MailHogTestCase
             $SUT->getBody()
         );
     }
+
+    /** @test */
+    public function it_does_not_decode_the_body_if_it_is_a_multipart_alternative()
+    {
+        $SUT = MimePart::create(
+            [
+                'Headers' => [
+                    'Content-Type' => [
+                        "multipart/alternative; boundary=\"_=_swift_v4_1499513469_5f26d6ecf30d607307d71ca8aa025a42_=_\"",
+                    ],
+                ],
+                'Body'    => "\r\n--_=_swift_v4_1499513469_5f26d6ecf30d607307d71ca8aa025a42_=_\r\nContent-Type: text\/plain; charset=utf-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\nSome plain part\r\n\r\n--_=_swift_v4_1499513469_5f26d6ecf30d607307d71ca8aa025a42_=_\r\nContent-Type: text\/html; charset=utf-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\n<p>Some HTML part<\/p>\r\n\r\n--_=_swift_v4_1499513469_5f26d6ecf30d607307d71ca8aa025a42_=_--",
+            ]
+        );
+
+        $this->assertSame(
+            "multipart/alternative; boundary=\"_=_swift_v4_1499513469_5f26d6ecf30d607307d71ca8aa025a42_=_\"",
+            $SUT->getContentType()
+        );
+        $this->assertSame(
+            "\r\n--_=_swift_v4_1499513469_5f26d6ecf30d607307d71ca8aa025a42_=_\r\nContent-Type: text\/plain; charset=utf-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\nSome plain part\r\n\r\n--_=_swift_v4_1499513469_5f26d6ecf30d607307d71ca8aa025a42_=_\r\nContent-Type: text\/html; charset=utf-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\n<p>Some HTML part<\/p>\r\n\r\n--_=_swift_v4_1499513469_5f26d6ecf30d607307d71ca8aa025a42_=_--",
+            $SUT->getBody()
+        );
+    }
 }

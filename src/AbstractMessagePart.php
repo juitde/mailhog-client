@@ -37,16 +37,20 @@ abstract class AbstractMessagePart
 
     public function getBody(): string
     {
+        if ($this->startsWith($this->headers->get('Content-Type'), 'multipart')) {
+            return $this->body;
+        }
+
         $decoded = quoted_printable_decode($this->body);
 
-        return str_replace("\r\n", PHP_EOL, $decoded);
+        return str_replace("\r\n", "\n", $decoded);
     }
 
     /** @return MimePart|null */
     protected function getMimePart(string $contentType)
     {
         foreach ($this->parts as $part) {
-            if (0 === strpos((string) $part->getContentType(), $contentType)) {
+            if ($this->startsWith($part->getContentType(), $contentType)) {
                 return $part;
             }
             if ($subPart = $part->getMimePart($contentType)) {
@@ -55,5 +59,10 @@ abstract class AbstractMessagePart
         }
 
         return null;
+    }
+
+    private function startsWith(string $haystack = null, string $needle): bool
+    {
+        return 0 === strpos((string) $haystack, $needle);
     }
 }
