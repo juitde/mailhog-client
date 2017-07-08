@@ -37,7 +37,9 @@ abstract class AbstractMessagePart
 
     public function getBody(): string
     {
-        return $this->body;
+        $decoded = quoted_printable_decode($this->body);
+
+        return str_replace("\r\n", PHP_EOL, $decoded);
     }
 
     /** @return MimePart|null */

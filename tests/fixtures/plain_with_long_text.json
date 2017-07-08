@@ -1,0 +1,64 @@
+{
+    "ID": "4q6Dv5tby5npdAcM2JdSX0XUmo6TuX1CurN7mxPfnkY=@mailhog.example",
+    "From": {
+        "Relays": null,
+        "Mailbox": "sender",
+        "Domain": "example.com",
+        "Params": ""
+    },
+    "To": [
+        {
+            "Relays": null,
+            "Mailbox": "recipient",
+            "Domain": "example.com",
+            "Params": ""
+        }
+    ],
+    "Content": {
+        "Headers": {
+            "Content-Transfer-Encoding": [
+                "quoted-printable"
+            ],
+            "Content-Type": [
+                "text\/plain; charset=utf-8"
+            ],
+            "Date": [
+                "Sat, 08 Jul 2017 13:50:12 +0200"
+            ],
+            "From": [
+                "Sender <sender@example.com>"
+            ],
+            "MIME-Version": [
+                "1.0"
+            ],
+            "Message-ID": [
+                "<a0861497596058d48135a5d88f77970f@swift.generated>"
+            ],
+            "Received": [
+                "from [127.0.0.1] by mailhog.example (MailHog)\r\n          id 4q6Dv5tby5npdAcM2JdSX0XUmo6TuX1CurN7mxPfnkY=@mailhog.example; Sat, 08 Jul 2017 13:50:12 +0200"
+            ],
+            "Return-Path": [
+                "<sender@example.com>"
+            ],
+            "Subject": [
+                "Some plain mail wtih long text"
+            ],
+            "To": [
+                "Recipient <recipient@example.com>"
+            ]
+        },
+        "Body": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy ei=\r\nrmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam volu=\r\nptua.\r\nAt vero eos et accusam et justo duo dolores et ea rebum. Stet clita=\r\n kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lo=\r\nrem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirm=\r\nod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam volupt=\r\nua.\r\nAt vero eos et accusam et justo duo dolores et ea rebum. Stet clita k=\r\nasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+        "Size": 939,
+        "MIME": null
+    },
+    "Created": "2017-07-08T13:50:12.942098316+02:00",
+    "MIME": null,
+    "Raw": {
+        "From": "sender@example.com",
+        "To": [
+            "recipient@example.com"
+        ],
+        "Data": "Message-ID: <a0861497596058d48135a5d88f77970f@swift.generated>\r\nDate: Sat, 08 Jul 2017 13:50:12 +0200\r\nSubject: Some plain mail wtih long text\r\nFrom: Sender <sender@example.com>\r\nTo: Recipient <recipient@example.com>\r\nMIME-Version: 1.0\r\nContent-Type: text\/plain; charset=utf-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy ei=\r\nrmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam volu=\r\nptua.\r\nAt vero eos et accusam et justo duo dolores et ea rebum. Stet clita=\r\n kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lo=\r\nrem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirm=\r\nod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam volupt=\r\nua.\r\nAt vero eos et accusam et justo duo dolores et ea rebum. Stet clita k=\r\nasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+        "Helo": "[127.0.0.1]"
+    }
+}

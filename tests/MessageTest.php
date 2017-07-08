@@ -31,6 +31,19 @@ class MessageTest extends MailHogTestCase
     }
 
     /** @test */
+    public function it_decodes_the_body_of_a_plain_message()
+    {
+        $rawData = $this->loadFixture('plain_with_long_text');
+
+        $SUT = Message::create($rawData);
+
+        $this->assertStringEqualsFile(
+            $this->getFixturesPath() . '/plain_with_long_text_expected.txt',
+            $SUT->getBody()
+        );
+    }
+
+    /** @test */
     public function it_returns_the_body_of_an_html_message()
     {
         $rawData = $this->loadFixture('html');
@@ -38,6 +51,19 @@ class MessageTest extends MailHogTestCase
         $SUT = Message::create($rawData);
 
         $this->assertSame('<p>Some HTML body</p>', $SUT->getBody());
+    }
+
+    /** @test */
+    public function it_decodes_the_body_of_an_html_message()
+    {
+        $rawData = $this->loadFixture('html_with_long_text');
+
+        $SUT = Message::create($rawData);
+
+        $this->assertStringEqualsFile(
+            $this->getFixturesPath() . '/html_with_long_text_expected.html',
+            $SUT->getBody()
+        );
     }
 
     /** @test */

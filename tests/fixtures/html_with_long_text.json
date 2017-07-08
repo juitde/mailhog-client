@@ -1,0 +1,64 @@
+{
+    "ID": "dguinsyCklSYT8HwsBUTG5idBW7ICUe9Jh60TmqJlQE=@mailhog.example",
+    "From": {
+        "Relays": null,
+        "Mailbox": "sender",
+        "Domain": "example.com",
+        "Params": ""
+    },
+    "To": [
+        {
+            "Relays": null,
+            "Mailbox": "recipient",
+            "Domain": "example.com",
+            "Params": ""
+        }
+    ],
+    "Content": {
+        "Headers": {
+            "Content-Transfer-Encoding": [
+                "quoted-printable"
+            ],
+            "Content-Type": [
+                "text\/html; charset=utf-8"
+            ],
+            "Date": [
+                "Sat, 08 Jul 2017 14:03:15 +0200"
+            ],
+            "From": [
+                "Sender <sender@example.com>"
+            ],
+            "MIME-Version": [
+                "1.0"
+            ],
+            "Message-ID": [
+                "<345b0cc754e894556f0e602f30f9222b@swift.generated>"
+            ],
+            "Received": [
+                "from  by mailhog.example (MailHog)\r\n          id dguinsyCklSYT8HwsBUTG5idBW7ICUe9Jh60TmqJlQE=@mailhog.example; Sat, 08 Jul 2017 14:03:15 +0200"
+            ],
+            "Return-Path": [
+                "<sender@example.com>"
+            ],
+            "Subject": [
+                "Some HTML mail with long text"
+            ],
+            "To": [
+                "Recipient <recipient@example.com>"
+            ]
+        },
+        "Body": "<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy=\r\n eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam v=\r\noluptua.<\/p>\r\n<p>At vero eos et accusam et justo duo dolores et ea rebum. =\r\nStet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor si=\r\nt amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam n=\r\nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed d=\r\niam voluptua.<\/p>\r\n<p>At vero eos et accusam et justo duo dolores et ea re=\r\nbum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dol=\r\nor sit amet.<\/p>",
+        "Size": 961,
+        "MIME": null
+    },
+    "Created": "2017-07-08T14:03:15.701034388+02:00",
+    "MIME": null,
+    "Raw": {
+        "From": "sender@example.com",
+        "To": [
+            "recipient@example.com"
+        ],
+        "Data": "Message-ID: <345b0cc754e894556f0e602f30f9222b@swift.generated>\r\nDate: Sat, 08 Jul 2017 14:03:15 +0200\r\nSubject: Some HTML mail with long text\r\nFrom: Sender <sender@example.com>\r\nTo: Recipient <recipient@example.com>\r\nMIME-Version: 1.0\r\nContent-Type: text\/html; charset=utf-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\n<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy=\r\n eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam v=\r\noluptua.<\/p>\r\n<p>At vero eos et accusam et justo duo dolores et ea rebum. =\r\nStet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor si=\r\nt amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam n=\r\nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed d=\r\niam voluptua.<\/p>\r\n<p>At vero eos et accusam et justo duo dolores et ea re=\r\nbum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dol=\r\nor sit amet.<\/p>",
+        "Helo": ""
+    }
+}
