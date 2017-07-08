@@ -164,4 +164,17 @@ class MessageTest extends MailHogTestCase
 
         $this->assertSame('<p>Some HTML part</p>', $SUT->getHtmlPart()->getBody());
     }
+
+    /** @test */
+    public function it_returns_the_attachments()
+    {
+        $rawData = $this->loadJsonFixture('multipart_with_attachments');
+
+        $SUT = Message::create($rawData);
+        $attachments = $SUT->getAttachments();
+
+        $this->assertCount(2, $attachments);
+        $this->assertSame('some_file.txt', $attachments[0]->getFilename());
+        $this->assertSame('some_other_file.txt', $attachments[1]->getFilename());
+    }
 }

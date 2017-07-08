@@ -63,6 +63,11 @@ abstract class AbstractMessagePart
 
     protected function contentTypeStartsWith(string $needle): bool
     {
-        return 0 === strpos((string) $this->getContentType(), $needle);
+        return $this->headerStartsWith('Content-Type', $needle);
+    }
+
+    protected function headerStartsWith(string $headerName, string $needle): bool
+    {
+        return 0 === strpos((string) $this->headers->get($headerName), $needle);
     }
 }

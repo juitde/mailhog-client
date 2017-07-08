@@ -8,6 +8,9 @@ use Symfony\Component\HttpFoundation\HeaderBag;
 
 class Message extends AbstractMessagePart
 {
+    /** @var Attachment[] */
+    private $attachments;
+
     public static function create(array $rawData): Message
     {
         return new static(
@@ -15,6 +18,18 @@ class Message extends AbstractMessagePart
             $rawData['Content']['Body'],
             $rawData['MIME']['Parts'] ?? []
         );
+    }
+
+    public function __construct(HeaderBag $headers, $body, array $parts = [])
+    {
+        parent::__construct($headers, $body, $parts);
+
+        $this->attachments = [];
+        foreach ($this->parts as $part) {
+            if ($part->isAttachment()) {
+                $this->attachments[] = Attachment::createFromMimePart($part);
+            }
+        }
     }
 
     public function getFrom(): string
@@ -42,5 +57,11 @@ class Message extends AbstractMessagePart
     public function getHtmlPart()
     {
         return $this->getMimePart('text/html');
+    }
+
+    /** @return Attachment[] */
+    public function getAttachments(): array
+    {
+        return $this->attachments;
     }
 }

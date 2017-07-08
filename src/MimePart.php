@@ -16,4 +16,9 @@ class MimePart extends AbstractMessagePart
             $rawData['MIME']['Parts'] ?? []
         );
     }
+
+    public function isAttachment(): bool
+    {
+        return $this->headerStartsWith('Content-Disposition', 'attachment');
+    }
 }
