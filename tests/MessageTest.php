@@ -97,6 +97,19 @@ class MessageTest extends MailHogTestCase
     }
 
     /** @test */
+    public function it_decodes_the_plain_part_of_a_multipart_message()
+    {
+        $rawData = $this->loadJsonFixture('multipart_with_long_text');
+
+        $SUT = Message::create($rawData);
+
+        $this->assertStringEqualsFile(
+            $this->getFixturesPath('plain_with_long_text_expected.txt'),
+            $SUT->getPlainPart()->getBody()
+        );
+    }
+
+    /** @test */
     public function it_returns_the_html_part_of_a_multipart_message()
     {
         $rawData = $this->loadJsonFixture('multipart');
@@ -104,6 +117,19 @@ class MessageTest extends MailHogTestCase
         $SUT = Message::create($rawData);
 
         $this->assertSame('<p>Some HTML part</p>', $SUT->getHtmlPart()->getBody());
+    }
+
+    /** @test */
+    public function it_decodes_the_html_part_of_a_multipart_message()
+    {
+        $rawData = $this->loadJsonFixture('multipart_with_long_text');
+
+        $SUT = Message::create($rawData);
+
+        $this->assertStringEqualsFile(
+            $this->getFixturesPath('html_with_long_text_expected.html'),
+            $SUT->getHtmlPart()->getBody()
+        );
     }
 
     /** @test */
