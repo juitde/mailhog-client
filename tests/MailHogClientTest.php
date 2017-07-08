@@ -61,7 +61,7 @@ class MailHogClientTest extends MailHogTestCase
     {
         $responseData = [
             'items' => [
-                $this->loadFixture('plain'),
+                $this->loadJsonFixture('plain'),
             ],
         ];
         $responseBody = json_encode($responseData);

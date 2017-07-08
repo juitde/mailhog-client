@@ -8,13 +8,15 @@ use PHPUnit\Framework\TestCase;
 
 class MailHogTestCase extends TestCase
 {
-    protected function getFixturesPath(): string
+    protected function getFixturesPath(string $filename): string
     {
-        return __DIR__ . '/fixtures';
+        return __DIR__ . '/fixtures/' . $filename;
     }
 
-    protected function loadFixture(string $type): array
+    protected function loadJsonFixture(string $type): array
     {
-        return json_decode(file_get_contents($this->getFixturesPath() . '/' . $type . '.json'), true);
+        $filename = $type . '.json';
+
+        return json_decode(file_get_contents($this->getFixturesPath($filename)), true);
     }
 }
