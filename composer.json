@@ -2,6 +2,7 @@
     "name": "juit/mailhog-client",
     "type": "library",
     "description": "MailHog client",
+    "license": "MIT",
     "authors": [
         {
             "name": "Jan Unger",
